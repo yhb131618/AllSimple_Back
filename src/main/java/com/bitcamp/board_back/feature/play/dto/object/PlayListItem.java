@@ -20,7 +20,7 @@ public class PlayListItem {
     private int favoriteCount;
     private int commentCount;
     private int viewCount;
-    private String writeDateTime;
+    private String writeDatetime;
     private String writerNickname;
     private String writerProfileImage;
 
@@ -32,7 +32,7 @@ public class PlayListItem {
         this.favoriteCount = playListViewEntity.getFavoriteCount();
         this.commentCount = playListViewEntity.getCommentCount();
         this.viewCount = playListViewEntity.getViewCount();
-        this.writeDateTime = playListViewEntity.getWriteDatetime();
+        this.writeDatetime = playListViewEntity.getWriteDatetime();
         this.writerNickname = playListViewEntity.getWriterNickname();
         this.writerProfileImage = playListViewEntity.getWriterProfileImage();
 

@@ -15,15 +15,15 @@ import lombok.NoArgsConstructor;
 public class BoardListItem {
     private int boardNumber;
     private String title;
-    private String  content;
+    private String content;
     private String boardTitleImage;
     private int favoriteCount;
     private int commentCount;
     private int viewCount;
-    private String writeDateTime;
+    private String writeDatetime;
     private String writerNickname;
     private String writerProfileImage;
-    
+
     public BoardListItem(BoardListViewEntity boardListViewEntity) {
         this.boardNumber = boardListViewEntity.getBoardNumber();
         this.title = boardListViewEntity.getTitle();
@@ -32,7 +32,7 @@ public class BoardListItem {
         this.favoriteCount = boardListViewEntity.getFavoriteCount();
         this.commentCount = boardListViewEntity.getCommentCount();
         this.viewCount = boardListViewEntity.getViewCount();
-        this.writeDateTime = boardListViewEntity.getWriteDatetime();
+        this.writeDatetime = boardListViewEntity.getWriteDatetime();
         this.writerNickname = boardListViewEntity.getWriterNickname();
         this.writerProfileImage = boardListViewEntity.getWriterProfileImage();
 
@@ -40,7 +40,7 @@ public class BoardListItem {
 
     public static List<BoardListItem> getList(List<BoardListViewEntity> boardListViewEntities) {
         List<BoardListItem> list = new ArrayList<>();
-        for (BoardListViewEntity boardListViewEntity: boardListViewEntities) {
+        for (BoardListViewEntity boardListViewEntity : boardListViewEntities) {
             BoardListItem boardListItem = new BoardListItem(boardListViewEntity);
             list.add(boardListItem);
         }
