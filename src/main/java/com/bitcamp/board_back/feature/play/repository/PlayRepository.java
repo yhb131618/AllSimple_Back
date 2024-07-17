@@ -21,7 +21,7 @@ public interface PlayRepository extends JpaRepository<PlayEntity, Integer> {
             "P.write_datetime AS writerDatetime, " +
             "P.writer_email AS writerEmail, " +
             "P.play AS play, " +
-            "P.nickname AS writerNickname, " +
+            "U.nickname AS writerNickname, " +
             "U.profile_image AS writerProfileImage " +
             "FROM play AS P " +
             "INNER JOIN user AS U " +

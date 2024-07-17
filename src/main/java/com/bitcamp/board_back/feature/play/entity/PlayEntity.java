@@ -53,7 +53,7 @@ public class PlayEntity {
         this.play = dto.getPlay();
     }
 
-    public void increaseViewCount() {
+    public void increasePlayViewCount() {
         this.viewCount++;
     }
 
