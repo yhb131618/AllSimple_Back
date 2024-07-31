@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bitcamp.board_back.feature.play.dto.request.PostPlayRequestDto;
 import com.bitcamp.board_back.feature.play.dto.response.GetLatestPlayListResponseDto;
 import com.bitcamp.board_back.feature.play.dto.response.GetPlayResponseDto;
-import com.bitcamp.board_back.feature.play.dto.response.IncreasePlayViewCountResponseDto;
 import com.bitcamp.board_back.feature.play.dto.response.PostPlayResponseDto;
 import com.bitcamp.board_back.feature.play.service.PlayService;
 import com.bitcamp.board_back.feature.user.dto.AccountUserDetails;
@@ -42,11 +41,5 @@ public class PlayController {
     @GetMapping("/latest-list")
     public ResponseEntity<? super GetLatestPlayListResponseDto> getLatestPlayList() {
         return playService.getLatestPlayList();
-    }
-
-    @GetMapping("/{playNumber}/increase-play-view-count")
-    public ResponseEntity<? super IncreasePlayViewCountResponseDto> increasePlayViewCount(
-            @PathVariable("playNumber") Integer playNumber) {
-        return playService.increasePlayViewCount(playNumber);
     }
 }

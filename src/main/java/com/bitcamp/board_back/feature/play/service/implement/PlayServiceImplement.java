@@ -10,7 +10,6 @@ import com.bitcamp.board_back.common.ApiResponse;
 import com.bitcamp.board_back.feature.play.dto.request.PostPlayRequestDto;
 import com.bitcamp.board_back.feature.play.dto.response.GetLatestPlayListResponseDto;
 import com.bitcamp.board_back.feature.play.dto.response.GetPlayResponseDto;
-import com.bitcamp.board_back.feature.play.dto.response.IncreasePlayViewCountResponseDto;
 import com.bitcamp.board_back.feature.play.dto.response.PostPlayResponseDto;
 import com.bitcamp.board_back.feature.play.entity.PlayEntity;
 import com.bitcamp.board_back.feature.play.entity.PlayListViewEntity;
@@ -89,23 +88,4 @@ public class PlayServiceImplement implements PlayService {
 
         return GetLatestPlayListResponseDto.success(playListViewEntities);
     }
-
-    @Override
-    public ResponseEntity<? super IncreasePlayViewCountResponseDto> increasePlayViewCount(Integer playNumber) {
-
-        try {
-            PlayEntity playEntity = playRepository.findByPlayNumber(playNumber);
-            if (playEntity == null)
-                return IncreasePlayViewCountResponseDto.notExistPlay();
-
-            playEntity.increasePlayViewCount();
-            playRepository.save(playEntity);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            return ApiResponse.databaseError();
-        }
-
-        return IncreasePlayViewCountResponseDto.success();
-    }
-
 }
